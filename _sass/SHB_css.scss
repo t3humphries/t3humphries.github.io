@@ -1,0 +1,87 @@
+img {
+    border-radius: 5%;
+  }
+  
+  .jumbotron {
+    padding: 20px;
+    padding-bottom: 7px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+  }
+  
+  .navbar {
+    margin-bottom: 20px;
+    border-bottom: 4px solid var(--secondary);
+  }
+  
+  .btn {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .container-fluid {
+    max-width: 100%; /* Make the container fluid */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .container-footer {
+    max-width: 100%; /* Make the container fluid */
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .well-collapse {
+    padding: 12px 20px; /* Simplify padding */
+    border-radius: 7px;
+    margin-top: 15px;
+    color: black;
+    background-color: var(--gray);
+    border: 2px solid var(--gray-dark);
+    blockquote {
+      border-color: var(--gray-dark);
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  .embed-container-home {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Make the container fluid */
+    max-width: 100%; /* Ensure the image scales with the container */
+    height: auto; /* Maintain the aspect ratio */
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url($baseurl + "/images/thumbs/3dtrain.jpeg");
+  }
+  
+  .embed-container,
+  .embed-container-spleen,
+  .embed-container-leuk {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Make the container fluid */
+    max-width: 100%; /* Ensure the image scales with the container */
+    height: auto; /* Maintain the aspect ratio */
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Add specific styles for each container if needed */
+  .embed-container-spleen {
+    height: auto; /* Adjust the height as needed */
+    background-image: url($baseurl + "/images/thumbs/spleen.jpg");
+  }
+  
+  .embed-container-leuk {
+    height: auto; /* Adjust the height as needed */
+    background-image: url($baseurl + "/images/thumbs/spleen.jpg");
+  }
+  
