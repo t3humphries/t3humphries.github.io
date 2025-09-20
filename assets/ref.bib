@@ -1,54 +1,106 @@
-@incollection{example_invited_talk,
-  author = {J. Doe},
-  note = {Example Location},
-  publisher = {Example Talk Name},
-  year = {2040},
-  keywords = "invited",
+@Article{frac_laplacian,
+AUTHOR = {Li, Chenkuan and Li, Changpin and Humphries, Thomas and Plowman, Hunter},
+TITLE = {Remarks on the Generalized Fractional Laplacian Operator},
+JOURNAL = {Mathematics},
+VOLUME = {7},
+YEAR = {2019},
+NUMBER = {4},
+ARTICLE-NUMBER = {320},
+URL = {https://www.mdpi.com/2227-7390/7/4/320}
 }
 
-@software{example_software,
-  author = {J. Doe},
-  title = {Example software},
-  url = {https://example.com},
-  date = {2040},
+@Article{integral_equations,
+AUTHOR = {Li, Chenkuan and Humphries, Thomas and Plowman, Hunter},
+TITLE = {Solutions to Abel’s Integral Equations in Distributions},
+JOURNAL = {Axioms},
+VOLUME = {7},
+YEAR = {2018},
+NUMBER = {3},
+ARTICLE-NUMBER = {66},
+URL = {https://www.mdpi.com/2075-1680/7/3/66}
 }
 
-@inproceedings{example_proceeding,
-    Author = {J. Doe},
-    Year = {2040},
-    Title = {Example title},
-    Booktitle = {Example Book},
-    Address = {Pasadena, CA},
-    file = {example_proceeding.pdf},
-    abstract = {Example abstract.},
+
+@inproceedings{tipsi, author = {Mahdavi, Rasoul Akhavan and Humphries, Thomas and Kacsmar, Bailey and Krastnikov, Simeon and Lukas, Nils and Premkumar, John A. and Shafieinejad, Masoumeh and Oya, Simon and Kerschbaum, Florian and Blass, Erik-Oliver}, title = {Practical Over-Threshold Multi-Party Private Set Intersection}, year = {2020}, url = {https://doi.org/10.1145/3427228.3427267}, booktitle = {Annual Computer Security Applications Conference (ACSAC)}, pages = {772–783}}
+
+
+@mastersthesis{Thesis,
+author={{Humphries, Thomas}},
+title={Differentially Private Simple Genetic Algorithms},
+year={2021},
+publisher="UWSpace",
+url={http://hdl.handle.net/10012/17756}
 }
 
-@incollection{example_conference,
-    author = {J. Doe},
-    title = {Example talk},
-    note = {Example Conference},
-    year = {2040},
+@inproceedings{simple_ga,
+author={Humphries, Thomas and Florian Kerschbaum},
+title={Differentially Private Simple Genetic Algorithms},
+year={2023},
+Issue = {4},
+Pages = {540–558},
+booktitle = {Proc. Priv. Enhancing Technol.},
+DOI ={https://doi.org/10.56553/popets-2023-0124},
+code = {https://gitlab.uwaterloo.ca/t3humphr/dp-simple-ga},
+abstract = {The differentially private (DP) selection problem is a fundamental building block in the private literature that is commonly solved with the exponential mechanism. It is well known that efficiency is the major drawback of the exponential mechanism, as the utility function must be computed for all elements in the domain. Genetic algorithms (GAs) use the principles of evolution in nature to efficiently search through large domains and select the best candidate. We observe that GAs have many appealing properties for DP Selection. These include being robust to noisy objectives, placing no restriction on the utility function, and efficient runtime for large domains. However, prior work investigating DP GAs has shown poor utility in practice and often gives the highest utility when zero generations are conducted (indicating that GA operations are not beneficial under DP). This work provides a new DPGA based on the simple GA that addresses the weaknesses of prior solutions. We reduce the destructive nature of previous GA operators and utilize several techniques to reduce the noise from DP. Our modifications allow us to utilize the GA operators over multiple generations (under DP) and improve the GA’s overall utility over zero generation techniques. Our work shows that private GAs are competitive with state-of-the-art general and problem-specific solutions to the DP selection problem, with runtime sublinear in the domain size.}
 }
 
-@unpublished{feynman06,
-    Author = {R. P. Feynman and J. M. Cline},
-    Title = {Feynman lectures on the strong interations},
-    Note = {arXiv:2006.08594},
-    doi = {2006.08594},
-    file = {feynman06.pdf},
-    abstract = {These twenty-two lectures, with exercises, comprise the extent of what was meant to be a full-year graduate-level course on the strong interactions and QCD, given at Caltech in 1987-88. The course was cut short by the illness that led to Feynman's death. Several of the lectures were finalized in collaboration with Feynman for an anticipated monograph based on the course. The others, while retaining Feynman's idiosyncrasies, are revised similarly to those he was able to check. His distinctive approach and manner of presentation are manifest throughout. Near the end he suggests a novel, nonperturbative formulation of quantum field theory in D dimensions. Supplementary material is provided in appendices and ancillary files, including verbatim transcriptions of three lectures and the corresponding audiotaped recordings.},
+@inproceedings{dp_does_not_bound,
+  author = {Humphries, Thomas and Oya, Simon and Tulloch, Lindsey and Rafuse, Matthew and Goldberg, Ian and Hengartner, Urs and Kerschbaum, Florian},
+  title = {Investigating Membership Inference Attacks under Data Dependencies},
+  booktitle = {IEEE CSF},
+  year = {2023},
+  pages={473-488},
+  doi={10.1109/CSF57540.2023.00013}
 }
 
-@article{feynman1939forces,
-  title={Forces in molecules},
-  author={R. P. Feynman},
-  journal={Physical Review},
-  volume={56},
+@inproceedings{selMPC, author = {Humphries, Thomas and Akhavan Mahdavi, Rasoul and Veitch, Shannon and Kerschbaum, Florian}, title = {Selective MPC: Distributed Computation of Differentially Private Key-Value Statistics}, year = {2022},  booktitle = {ACM SIGSAC Conference on Computer and Communications Security (CCS)}, pages = {1459–1472}}
+
+@inproceedings{dpcache ,
+  title={Cache Me If You Can: Accuracy-Aware Inference Engine for Differentially Private Data Exploration},
+  author={Mazmudar, Miti and Humphries, Thomas and Liu, Jiaxiang and Rafuse, Matthew and He, Xi},
+  journal={Proceedings of the VLDB Endowment},
+  volume={16},
   number={4},
-  pages={340},
-  year={1939},
-  doi={10.1103/PhysRev.56.340},
-  file={feynman39.pdf},
-  abstract={Formulas have been developed to calculate the forces in a molecular system directly, rather than indirectly through the agency of energy. This permits an independent calculation of the slope of the curves of energy vs. position of the nuclei, and may thus increase the accuracy, or decrease the labor involved in the calculation of these curves. The force on a nucleus in an atomic system is shown to be just the classical electrostatic force that would be exerted on this nucleus by other nuclei and by the electrons' charge distribution. Qualitative implications of this are discussed.},
+  pages={574--586},
+  year={2023},
+  publisher={VLDB Endowment}
 }
+
+@inproceedings{ants, author = {Abdelbar, Ashraf M. and Humphries, Thomas and Falc\'{o}n-Cardona, Jes\'{u}s Guillermo and Coello Coello, Carlos A.}, title = {An Extension of the IMOACOR Algorithm Based on Layer-Set Selection}, year = {2022}, url = {https://doi.org/10.1007/978-3-031-20176-9_22}, doi = {10.1007/978-3-031-20176-9_22}, booktitle = {Swarm Intelligence: 13th International Conference (ANTS)}, pages = {266–274} }
+
+
+@inproceedings{gaggle, author = {Fenaux, Lucas and Humphries, Thomas and Kerschbaum, Florian}, title = {Gaggle: Genetic Algorithms on the GPU using PyTorch}, year = {2023}, doi = {10.1145/3583133.3596356}, booktitle = {Proceedings of the Companion Conference on Genetic and Evolutionary Computation}, pages = {2358–2361}, location = {Lisbon, Portugal}, series = {GECCO '23 Companion} }
+
+@inproceedings {poly_relu,
+author = {Abdulrahman Diaa and Lucas Fenaux and Thomas Humphries and Marian Dietz and Faezeh Ebrahimianghazani and Bailey Kacsmar and Xinda Li and Nils Lukas and Rasoul Akhavan Mahdavi and Simon Oya and Ehsan Amjadian and Florian Kerschbaum},
+title = {Fast and Private Inference of Deep Neural Networks by Co-designing Activation Functions},
+booktitle = {33rd USENIX Security Symposium (USENIX Security 24)},
+year = {2024},
+pages = {2191--2208},
+url = {https://www.usenix.org/conference/usenixsecurity24/presentation/diaa},
+publisher = {USENIX Association},
+month = aug
+}
+
+@inproceedings {pepsi,
+author = {Rasoul Akhavan Mahdavi and Nils Lukas and Faezeh Ebrahimianghazani and Thomas Humphries and Bailey Kacsmar and John Premkumar and Xinda Li and Simon Oya and Ehsan Amjadian and Florian Kerschbaum},
+title = {{PEPSI}: Practically Efficient Private Set Intersection in the Unbalanced Setting},
+booktitle = {33rd USENIX Security Symposium (USENIX Security 24)},
+year = {2024},
+pages = {6453--6470},
+url = {https://www.usenix.org/conference/usenixsecurity24/presentation/mahdavi},
+publisher = {USENIX Association},
+month = aug
+}
+
+
+@inproceedings {fast_lloyd,
+title={FastLloyd: Federated, Accurate, Secure, and Tunable $ k $-Means Clustering with Differential Privacy},
+  author={Diaa, Abdulrahman and Humphries, Thomas and Kerschbaum, Florian},
+booktitle = {34th USENIX Security Symposium (USENIX Security 25)},
+year = {2025},
+publisher = {USENIX Association},
+month = aug
+}
+
 

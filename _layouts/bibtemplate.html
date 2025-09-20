@@ -41,6 +41,10 @@ pre{
 <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank"><button class="btn btn-success btm-sm">PDF</button></a>
 {% endif %}
 
+{% if entry.code %}
+<a href="{{ entry.code }}" target="_blank"><button class="btn btn-info btm-sm">CODE</button></a>
+{% endif %}
+
 {% if entry.doi %}
 {% if entry.type == 'unpublished' %}
 <a href="{{ entry.doi | prepend: 'https://arxiv.org/abs/' }}" target="_blank"><button class="btn btn-primary btm-sm">ARXIV</button></a>
@@ -58,12 +62,32 @@ pre{
 {% endif %}
 
 {% if entry.abstract %}
+{% assign clean_bib = entry.bibtex | remove: entry.abstract | remove: entry.code | remove: entry.file %}
+{% assign clean_bib = clean_bib | replace: "code = {}", "" %}
+{% assign clean_bib = clean_bib | replace: "code = {},", "" %}
+{% assign clean_bib = clean_bib | replace: "file = {}", "" %}
+{% assign clean_bib = clean_bib | replace: "file = {},", "" %}
+{% assign clean_bib = clean_bib | replace: "
+
+}", "
+}" | replace: "
+}", "}" | strip %}
 <div id="a{{entry.key}}" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>{{ entry.bibtex | remove: "entry.abstract" }}</pre>
+<pre>{{ clean_bib }}</pre>
 </div>
 {% else %}
+{% assign clean_bib = entry.bibtex | remove: entry.code | remove: entry.file %}
+{% assign clean_bib = clean_bib | replace: "code = {}", "" %}
+{% assign clean_bib = clean_bib | replace: "code = {},", "" %}
+{% assign clean_bib = clean_bib | replace: "file = {}", "" %}
+{% assign clean_bib = clean_bib | replace: "file = {},", "" %}
+{% assign clean_bib = clean_bib | replace: "
+
+}", "
+}" | replace: "
+}", "}" | strip %}
 <div id="a{{entry.key}}" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>{{ entry.bibtex }}</pre>
+<pre>{{ clean_bib }}</pre>
 </div>
 {% endif %}
 
@@ -73,23 +97,37 @@ pre{
 
 <script>
 function toggleBibtex{{entry.key}}(parameter) {
-    var x = document.getElementById('a{{entry.key}}');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-        x.style.backgroundColor = 'white'; // Set the background color to white
+    var bibtex = document.getElementById('a{{entry.key}}');
+    var abstract = document.getElementById('b{{entry.key}}');
+    
+    // Close abstract if it's open
+    abstract.style.display = 'none';
+    abstract.style.backgroundColor = '';
+    
+    // Toggle bibtex
+    if (bibtex.style.display === 'none') {
+        bibtex.style.display = 'block';
+        bibtex.style.backgroundColor = 'white';
     } else {
-        x.style.display = 'none';
-        x.style.backgroundColor = ''; // Reset the background color
+        bibtex.style.display = 'none';
+        bibtex.style.backgroundColor = '';
     }
 }
 function toggleAbstract{{entry.key}}(parameter) {
-    var x = document.getElementById('b{{entry.key}}');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-        x.style.backgroundColor = 'white'; // Set the background color to white
+    var bibtex = document.getElementById('a{{entry.key}}');
+    var abstract = document.getElementById('b{{entry.key}}');
+    
+    // Close bibtex if it's open
+    bibtex.style.display = 'none';
+    bibtex.style.backgroundColor = '';
+    
+    // Toggle abstract
+    if (abstract.style.display === 'none') {
+        abstract.style.display = 'block';
+        abstract.style.backgroundColor = 'white';
     } else {
-        x.style.display = 'none';
-        x.style.backgroundColor = ''; // Reset the background color
+        abstract.style.display = 'none';
+        abstract.style.backgroundColor = '';
     }
 }
 </script>
