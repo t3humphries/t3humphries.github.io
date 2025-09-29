@@ -1,4 +1,4 @@
-@Article{frac_laplacian,
+@Article{li19laplacian,
 AUTHOR = {Li, Chenkuan and Li, Changpin and Humphries, Thomas and Plowman, Hunter},
 TITLE = {Remarks on the Generalized Fractional Laplacian Operator},
 JOURNAL = {Mathematics},
@@ -6,10 +6,12 @@ VOLUME = {7},
 YEAR = {2019},
 NUMBER = {4},
 ARTICLE-NUMBER = {320},
-URL = {https://www.mdpi.com/2227-7390/7/4/320}
+DOI = {10.3390/math7040320},
+file={li19laplacian.pdf},
+ABSTRACT = {The fractional Laplacian, also known as the Riesz fractional derivative operator, describes an unusual diffusion process due to random displacements executed by jumpers that are able to walk to neighbouring or nearby sites, as well as perform excursions to remote sites by way of Lévy flights. The fractional Laplacian has many applications in the boundary behaviours of solutions to differential equations. The goal of this paper is to investigate the half-order Laplacian operator ( − Δ ) 1 2 in the distributional sense, based on the generalized convolution and Temple’s delta sequence. Several interesting examples related to the fractional Laplacian operator of order 1 / 2 are presented with applications to differential equations, some of which cannot be obtained in the classical sense by the standard definition of the fractional Laplacian via Fourier transform.}
 }
 
-@Article{integral_equations,
+@Article{li18abel,
 AUTHOR = {Li, Chenkuan and Humphries, Thomas and Plowman, Hunter},
 TITLE = {Solutions to Abel’s Integral Equations in Distributions},
 JOURNAL = {Axioms},
@@ -17,14 +19,26 @@ VOLUME = {7},
 YEAR = {2018},
 NUMBER = {3},
 ARTICLE-NUMBER = {66},
-URL = {https://www.mdpi.com/2075-1680/7/3/66}
+DOI = {10.3390/axioms7030066},
+file={li18abel.pdf},
+ABSTRACT = {The goal of this paper is to study fractional calculus of distributions, the generalized Abel’s integral equations, as well as fractional differential equations in the distributional space D ′ ( R + ) based on inverse convolutional operators and Babenko’s approach. Furthermore, we provide interesting applications of Abel’s integral equations in viscoelastic systems, as well as solving other integral equations, such as ∫ θ π / 2 y ( φ ) cos β φ ( cos θ − cos φ ) α d φ = f ( θ ) , and ∫ 0 ∞ x 1 / 2 g ( x ) y ( x + t ) d x = f ( t ) .}
 }
 
 
-@inproceedings{tipsi, author = {Mahdavi, Rasoul Akhavan and Humphries, Thomas and Kacsmar, Bailey and Krastnikov, Simeon and Lukas, Nils and Premkumar, John A. and Shafieinejad, Masoumeh and Oya, Simon and Kerschbaum, Florian and Blass, Erik-Oliver}, title = {Practical Over-Threshold Multi-Party Private Set Intersection}, year = {2020}, url = {https://doi.org/10.1145/3427228.3427267}, booktitle = {Annual Computer Security Applications Conference (ACSAC)}, pages = {772–783}}
+@inproceedings{mahdavi20tipsi, 
+author = {Mahdavi, Rasoul Akhavan and Humphries, Thomas and Kacsmar, Bailey and Krastnikov, Simeon and Lukas, Nils and Premkumar, John A. and Shafieinejad, Masoumeh and Oya, Simon and Kerschbaum, Florian and Blass, Erik-Oliver}, 
+title = {Practical Over-Threshold Multi-Party Private Set Intersection}, 
+year = {2020}, 
+DOI = {10.1145/3427228.3427267}, 
+booktitle = {Annual Computer Security Applications Conference (ACSAC)}, 
+pages = {772–783},
+file={mahdavi20tipsi.pdf},
+abstract = {Over-Threshold Multi-Party Private Set Intersection (OT-MP-PSI) is the problem where several parties, each holding a set of elements, want to know which elements appear in at least t sets, for a certain threshold t, without revealing any information about elements that do not meet this threshold. This problem has many practical applications, but current solutions require a number of expensive operations exponential in t and thus are impractical. In this work we introduce two new OT-MP-PSI constructions using more efficient techniques. Our more refined scheme, which we call , runs in three communication rounds. achieves communication complexity that is linear in the number of parties, the number of elements they hold, and the intersection threshold. The computational cost of is still exponential in t, but it relies on cheap linear operations and thus it is still practical. We implement our new constructions to validate their practicality for varying thresholds, number of parties, and dataset size.},
+code = {https://gitlab.uwaterloo.ca/rakhavan/ot-mp-psi}
+}
 
 
-@mastersthesis{Thesis,
+@mastersthesis{humphries21thesis,
 author={{Humphries, Thomas}},
 title={Differentially Private Simple Genetic Algorithms},
 year={2021},
@@ -32,19 +46,19 @@ publisher="UWSpace",
 url={http://hdl.handle.net/10012/17756}
 }
 
-@inproceedings{simple_ga,
+@inproceedings{humphries23dpga,
 author={Humphries, Thomas and Florian Kerschbaum},
 title={Differentially Private Simple Genetic Algorithms},
 year={2023},
 Issue = {4},
 Pages = {540–558},
 booktitle = {Proc. Priv. Enhancing Technol.},
-DOI ={https://doi.org/10.56553/popets-2023-0124},
+DOI ={10.56553/popets-2023-0124},
 code = {https://gitlab.uwaterloo.ca/t3humphr/dp-simple-ga},
 abstract = {The differentially private (DP) selection problem is a fundamental building block in the private literature that is commonly solved with the exponential mechanism. It is well known that efficiency is the major drawback of the exponential mechanism, as the utility function must be computed for all elements in the domain. Genetic algorithms (GAs) use the principles of evolution in nature to efficiently search through large domains and select the best candidate. We observe that GAs have many appealing properties for DP Selection. These include being robust to noisy objectives, placing no restriction on the utility function, and efficient runtime for large domains. However, prior work investigating DP GAs has shown poor utility in practice and often gives the highest utility when zero generations are conducted (indicating that GA operations are not beneficial under DP). This work provides a new DPGA based on the simple GA that addresses the weaknesses of prior solutions. We reduce the destructive nature of previous GA operators and utilize several techniques to reduce the noise from DP. Our modifications allow us to utilize the GA operators over multiple generations (under DP) and improve the GA’s overall utility over zero generation techniques. Our work shows that private GAs are competitive with state-of-the-art general and problem-specific solutions to the DP selection problem, with runtime sublinear in the domain size.}
 }
 
-@inproceedings{dp_does_not_bound,
+@inproceedings{humphries23mia,
   author = {Humphries, Thomas and Oya, Simon and Tulloch, Lindsey and Rafuse, Matthew and Goldberg, Ian and Hengartner, Urs and Kerschbaum, Florian},
   title = {Investigating Membership Inference Attacks under Data Dependencies},
   booktitle = {IEEE CSF},
@@ -53,25 +67,50 @@ abstract = {The differentially private (DP) selection problem is a fundamental b
   doi={10.1109/CSF57540.2023.00013}
 }
 
-@inproceedings{selMPC, author = {Humphries, Thomas and Akhavan Mahdavi, Rasoul and Veitch, Shannon and Kerschbaum, Florian}, title = {Selective MPC: Distributed Computation of Differentially Private Key-Value Statistics}, year = {2022},  booktitle = {ACM SIGSAC Conference on Computer and Communications Security (CCS)}, pages = {1459–1472}}
+@inproceedings{humphries22selmpc, 
+author = {Humphries, Thomas and Akhavan Mahdavi, Rasoul and Veitch, Shannon and Kerschbaum, Florian}, 
+title = {Selective MPC: Distributed Computation of Differentially Private Key-Value Statistics}, 
+year = {2022},  
+booktitle = {ACM SIGSAC Conference on Computer and Communications Security (CCS)}, pages = {1459–1472}
+}
 
-@inproceedings{dpcache ,
+@inproceedings{mazmudar22cachedp,
   title={Cache Me If You Can: Accuracy-Aware Inference Engine for Differentially Private Data Exploration},
   author={Mazmudar, Miti and Humphries, Thomas and Liu, Jiaxiang and Rafuse, Matthew and He, Xi},
   journal={Proceedings of the VLDB Endowment},
   volume={16},
   number={4},
   pages={574--586},
-  year={2023},
-  publisher={VLDB Endowment}
+  year={2022},
+  doi = {10.14778/3574245.3574246},
+  publisher={VLDB Endowment},
+  abstract={Differential privacy (DP) allows data analysts to query databases that contain users' sensitive information while providing a quantifiable privacy guarantee to users. Recent interactive DP systems such as APEx provide accuracy guarantees over the query responses, but fail to support a large number of queries with a limited total privacy budget, as they process incoming queries independently from past queries. We present an interactive, accuracy-aware DP query engine, CacheDP, which utilizes a differentially private cache of past responses, to answer the current workload at a lower privacy budget, while meeting strict accuracy guarantees. We integrate complex DP mechanisms with our structured cache, through novel cache-aware DP cost optimization. Our thorough evaluation illustrates that CacheDP can accurately answer various workload sequences, while lowering the privacy loss as compared to related work.},
+  file={mazmudar22cachedp.pdf},
+  code={https://gitlab.uwaterloo.ca/m2mazmud/cachedp-public}
 }
 
-@inproceedings{ants, author = {Abdelbar, Ashraf M. and Humphries, Thomas and Falc\'{o}n-Cardona, Jes\'{u}s Guillermo and Coello Coello, Carlos A.}, title = {An Extension of the IMOACOR Algorithm Based on Layer-Set Selection}, year = {2022}, url = {https://doi.org/10.1007/978-3-031-20176-9_22}, doi = {10.1007/978-3-031-20176-9_22}, booktitle = {Swarm Intelligence: 13th International Conference (ANTS)}, pages = {266–274} }
+@inproceedings{abdelbar22imoacor, 
+author = {Abdelbar, Ashraf M. and Humphries, Thomas and Falc\'{o}n-Cardona, Jes\'{u}s Guillermo and Coello Coello, Carlos A.}, 
+title = {An Extension of the IMOACOR Algorithm Based on Layer-Set Selection}, 
+year = {2022}, 
+doi = {10.1007/978-3-031-20176-9_22}, 
+booktitle = {Swarm Intelligence: 13th International Conference (ANTS)}, 
+pages = {266–274} 
+}
 
 
-@inproceedings{gaggle, author = {Fenaux, Lucas and Humphries, Thomas and Kerschbaum, Florian}, title = {Gaggle: Genetic Algorithms on the GPU using PyTorch}, year = {2023}, doi = {10.1145/3583133.3596356}, booktitle = {Proceedings of the Companion Conference on Genetic and Evolutionary Computation}, pages = {2358–2361}, location = {Lisbon, Portugal}, series = {GECCO '23 Companion} }
+@inproceedings{fenaux23gaggle, 
+author = {Fenaux, Lucas and Humphries, Thomas and Kerschbaum, Florian}, 
+title = {Gaggle: Genetic Algorithms on the GPU using PyTorch}, 
+year = {2023}, 
+doi = {10.1145/3583133.3596356}, 
+booktitle = {Proceedings of the Companion Conference on Genetic and Evolutionary Computation}, 
+pages = {2358–2361}, 
+location = {Lisbon, Portugal}, 
+series = {GECCO '23 Companion} 
+}
 
-@inproceedings {poly_relu,
+@inproceedings {diaa24pillar,
 author = {Abdulrahman Diaa and Lucas Fenaux and Thomas Humphries and Marian Dietz and Faezeh Ebrahimianghazani and Bailey Kacsmar and Xinda Li and Nils Lukas and Rasoul Akhavan Mahdavi and Simon Oya and Ehsan Amjadian and Florian Kerschbaum},
 title = {Fast and Private Inference of Deep Neural Networks by Co-designing Activation Functions},
 booktitle = {33rd USENIX Security Symposium (USENIX Security 24)},
@@ -82,7 +121,7 @@ publisher = {USENIX Association},
 month = aug
 }
 
-@inproceedings {pepsi,
+@inproceedings {mahdavi24pepsi,
 author = {Rasoul Akhavan Mahdavi and Nils Lukas and Faezeh Ebrahimianghazani and Thomas Humphries and Bailey Kacsmar and John Premkumar and Xinda Li and Simon Oya and Ehsan Amjadian and Florian Kerschbaum},
 title = {{PEPSI}: Practically Efficient Private Set Intersection in the Unbalanced Setting},
 booktitle = {33rd USENIX Security Symposium (USENIX Security 24)},
@@ -94,7 +133,7 @@ month = aug
 }
 
 
-@inproceedings {fast_lloyd,
+@inproceedings {diaa25fastlloyd,
 title={FastLloyd: Federated, Accurate, Secure, and Tunable $ k $-Means Clustering with Differential Privacy},
   author={Diaa, Abdulrahman and Humphries, Thomas and Kerschbaum, Florian},
 booktitle = {34th USENIX Security Symposium (USENIX Security 25)},

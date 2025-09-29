@@ -1,6 +1,9 @@
-- date: 1 January, 1941
-  headline: "Example news here"
+- date: June 2025
+  headline: "I Started as a Research Intern at MSR Redmond with [Zinan Lin](https://zinanlin.me/bio/)!"
 
-- date: 1 January, 1940
-  headline: "Example news here"
+- date: May 2025
+  headline: "Our paper FastLloyd: Federated, Accurate, Secure, and Tunable k-Means Clustering with Differential Privacy is accepted to USENIX Security 2025!"
+
+- date: June 2024
+  headline: "I Started as a Research Intern at Microsoft in Cambridge with [Santiago Zanella-Béguelin](https://www.microsoft.com/en-us/research/people/santiago/)!"
 
