@@ -1,9 +1,17 @@
 - date: June 2025
-  headline: "I Started as a Research Intern at MSR Redmond with [Zinan Lin](https://zinanlin.me/bio/)!"
+  headline: "I started as a research intern at MSR Redmond with [Zinan Lin](https://zinanlin.me/bio/)!"
 
 - date: May 2025
-  headline: "Our paper FastLloyd: Federated, Accurate, Secure, and Tunable k-Means Clustering with Differential Privacy is accepted to USENIX Security 2025!"
+  headline: "Our paper [FastLloyd: Federated, Accurate, Secure, and Tunable k-Means Clustering with Differential Privacy](https://www.usenix.org/conference/usenixsecurity25/presentation/diaa) is accepted to USENIX Security 2025!"
 
 - date: June 2024
-  headline: "I Started as a Research Intern at Microsoft in Cambridge with [Santiago Zanella-Béguelin](https://www.microsoft.com/en-us/research/people/santiago/)!"
+  headline: "I started as a research intern at Microsoft in Cambridge with [Santiago Zanella-Béguelin](https://www.microsoft.com/en-us/research/people/santiago/)!"
+
+- date: March 2024
+  headline: "I completed my Comp II exam and am now a PhD Candidate!"
+
+- date: February 2024
+  headline: "Our paper [Fast and Private Inference of Deep Neural Networks by Co-designing Activation Functions](https://arxiv.org/abs/2306.08538) has been accepted to USENIX Security 2024!"
+
+
 
