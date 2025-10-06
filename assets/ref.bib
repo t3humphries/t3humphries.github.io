@@ -33,8 +33,8 @@ DOI = {10.1145/3427228.3427267},
 booktitle = {Annual Computer Security Applications Conference (ACSAC)}, 
 pages = {772–783},
 file={mahdavi20tipsi.pdf},
-abstract = {Over-Threshold Multi-Party Private Set Intersection (OT-MP-PSI) is the problem where several parties, each holding a set of elements, want to know which elements appear in at least t sets, for a certain threshold t, without revealing any information about elements that do not meet this threshold. This problem has many practical applications, but current solutions require a number of expensive operations exponential in t and thus are impractical. In this work we introduce two new OT-MP-PSI constructions using more efficient techniques. Our more refined scheme, which we call , runs in three communication rounds. achieves communication complexity that is linear in the number of parties, the number of elements they hold, and the intersection threshold. The computational cost of is still exponential in t, but it relies on cheap linear operations and thus it is still practical. We implement our new constructions to validate their practicality for varying thresholds, number of parties, and dataset size.},
-code = {https://gitlab.uwaterloo.ca/rakhavan/ot-mp-psi}
+code = {https://gitlab.uwaterloo.ca/rakhavan/ot-mp-psi},
+abstract = {Over-Threshold Multi-Party Private Set Intersection (OT-MP-PSI) is the problem where several parties, each holding a set of elements, want to know which elements appear in at least t sets, for a certain threshold t, without revealing any information about elements that do not meet this threshold. This problem has many practical applications, but current solutions require a number of expensive operations exponential in t and thus are impractical. In this work we introduce two new OT-MP-PSI constructions using more efficient techniques. Our more refined scheme, which we call , runs in three communication rounds. achieves communication complexity that is linear in the number of parties, the number of elements they hold, and the intersection threshold. The computational cost of is still exponential in t, but it relies on cheap linear operations and thus it is still practical. We implement our new constructions to validate their practicality for varying thresholds, number of parties, and dataset size.}
 }
 
 
@@ -55,6 +55,7 @@ Pages = {540–558},
 booktitle = {Proc. Priv. Enhancing Technol.},
 DOI ={10.56553/popets-2023-0124},
 code = {https://gitlab.uwaterloo.ca/t3humphr/dp-simple-ga},
+file = {humphries23dpga.pdf},
 abstract = {The differentially private (DP) selection problem is a fundamental building block in the private literature that is commonly solved with the exponential mechanism. It is well known that efficiency is the major drawback of the exponential mechanism, as the utility function must be computed for all elements in the domain. Genetic algorithms (GAs) use the principles of evolution in nature to efficiently search through large domains and select the best candidate. We observe that GAs have many appealing properties for DP Selection. These include being robust to noisy objectives, placing no restriction on the utility function, and efficient runtime for large domains. However, prior work investigating DP GAs has shown poor utility in practice and often gives the highest utility when zero generations are conducted (indicating that GA operations are not beneficial under DP). This work provides a new DPGA based on the simple GA that addresses the weaknesses of prior solutions. We reduce the destructive nature of previous GA operators and utilize several techniques to reduce the noise from DP. Our modifications allow us to utilize the GA operators over multiple generations (under DP) and improve the GA’s overall utility over zero generation techniques. Our work shows that private GAs are competitive with state-of-the-art general and problem-specific solutions to the DP selection problem, with runtime sublinear in the domain size.}
 }
 
@@ -64,14 +65,22 @@ abstract = {The differentially private (DP) selection problem is a fundamental b
   booktitle = {IEEE CSF},
   year = {2023},
   pages={473-488},
-  doi={10.1109/CSF57540.2023.00013}
+  doi={10.1109/CSF57540.2023.00013},
+  file={humphries23mia.pdf},
+  code={https://github.com/t3humphries/non-IID-MIA},
+  abstract = {Training machine learning models on privacy-sensitive data has become a popular practice, driving innovation in ever-expanding fields. This has opened the door to new attacks that can have serious privacy implications. One such attack, the Membership Inference Attack (MIA), exposes whether or not a particular data point was used to train a model. A growing body of literature uses Differentially Private (DP) training algorithms as a defence against such attacks. However, these works evaluate the defence under the restrictive assumption that all members of the training set, as well as non-members, are independent and identically distributed. This assumption does not hold for many real-world use cases in the literature. Motivated by this, we evaluate membership inference with statistical dependencies among samples and explain why DP does not provide meaningful protection (the privacy parameter $\epsilon$ scales with the training set size $n$) in this more general case. We conduct a series of empirical evaluations with off-the-shelf MIAs using training sets built from real-world data showing different types of dependencies among samples. Our results reveal that training set dependencies can severely increase the performance of MIAs, and therefore assuming that data samples are statistically independent can significantly underestimate the performance of MIAs.}
 }
 
 @inproceedings{humphries22selmpc, 
 author = {Humphries, Thomas and Akhavan Mahdavi, Rasoul and Veitch, Shannon and Kerschbaum, Florian}, 
 title = {Selective MPC: Distributed Computation of Differentially Private Key-Value Statistics}, 
 year = {2022},  
-booktitle = {ACM SIGSAC Conference on Computer and Communications Security (CCS)}, pages = {1459–1472}
+booktitle = {ACM SIGSAC Conference on Computer and Communications Security (CCS)}, 
+pages = {1459–1472},
+doi = {10.1145/3548606.3560559},
+file={humphries22selmpc.pdf},
+code = {https://git.uwaterloo.ca/r5akhava/selective-mpc},
+abstract = {Key-value data is a naturally occurring data type that has not been thoroughly investigated in the local trust model. Existing local differentially private (LDP) solutions for computing statistics over key-value data suffer from the inherent accuracy limitations of each user adding their own noise. Multi-party computation (MPC) maintains better accuracy than LDP and similarly does not require a trusted central party. However, naively applying MPC to key-value data results in prohibitively expensive computation costs. In this work, we present selective multi-party computation, a novel approach to distributed computation that leverages DP leakage to efficiently and accurately compute statistics over key-value data. By providing each party with a view of a random subset of the data, we can capture subtractive noise. We prove that our protocol satisfies pure DP and is provably secure in the combined DP/MPC model. Our empirical evaluation demonstrates that we can compute statistics over 10,000 keys in 20 seconds and can scale up to 30 servers while obtaining results for a single key in under a second.}
 }
 
 @inproceedings{mazmudar22cachedp,
@@ -84,9 +93,9 @@ booktitle = {ACM SIGSAC Conference on Computer and Communications Security (CCS)
   year={2022},
   doi = {10.14778/3574245.3574246},
   publisher={VLDB Endowment},
-  abstract={Differential privacy (DP) allows data analysts to query databases that contain users' sensitive information while providing a quantifiable privacy guarantee to users. Recent interactive DP systems such as APEx provide accuracy guarantees over the query responses, but fail to support a large number of queries with a limited total privacy budget, as they process incoming queries independently from past queries. We present an interactive, accuracy-aware DP query engine, CacheDP, which utilizes a differentially private cache of past responses, to answer the current workload at a lower privacy budget, while meeting strict accuracy guarantees. We integrate complex DP mechanisms with our structured cache, through novel cache-aware DP cost optimization. Our thorough evaluation illustrates that CacheDP can accurately answer various workload sequences, while lowering the privacy loss as compared to related work.},
   file={mazmudar22cachedp.pdf},
-  code={https://gitlab.uwaterloo.ca/m2mazmud/cachedp-public}
+  code={https://gitlab.uwaterloo.ca/m2mazmud/cachedp-public},
+  abstract={Differential privacy (DP) allows data analysts to query databases that contain users' sensitive information while providing a quantifiable privacy guarantee to users. Recent interactive DP systems such as APEx provide accuracy guarantees over the query responses, but fail to support a large number of queries with a limited total privacy budget, as they process incoming queries independently from past queries. We present an interactive, accuracy-aware DP query engine, CacheDP, which utilizes a differentially private cache of past responses, to answer the current workload at a lower privacy budget, while meeting strict accuracy guarantees. We integrate complex DP mechanisms with our structured cache, through novel cache-aware DP cost optimization. Our thorough evaluation illustrates that CacheDP can accurately answer various workload sequences, while lowering the privacy loss as compared to related work.}
 }
 
 @inproceedings{abdelbar22imoacor, 
@@ -95,7 +104,9 @@ title = {An Extension of the IMOACOR Algorithm Based on Layer-Set Selection},
 year = {2022}, 
 doi = {10.1007/978-3-031-20176-9_22}, 
 booktitle = {Swarm Intelligence: 13th International Conference (ANTS)}, 
-pages = {266–274} 
+pages = {266–274},
+file={abdelbar22imoacor.pdf},
+abstract = {iMOACO is an ant colony optimization algorithm designed to tackle multi-objective optimization problems in continuous search spaces. It is built on top of ACO and uses the R2 indicator (to improve its performance on high-dimensional objective function spaces) to rank the pheromone archive of the best previously-explored solutions. Due to the utilization of an R2-based selection mechanism, there are typically a large number of tied-ranks in iMOACO’s pheromone archive. It is worth noting that the solutions of a specific layer share the same importance based on the R2 indicator. A critical issue due to the large number of tied-ranks is a reduction of the algorithm’s exploitation ability. In consequence, in this paper, we propose replacing iMOACO’s probabilistic solution selection mechanism with a mechanism tailored to these layer-sets. Our proposed layer-set selection uses rank-proportionate (roulette wheel) selection to select a layer, with all the solutions in the layer sharing equally in the layer’s probability. Our experimental evaluation indicates that our proposal, which we call iMOACO, performs better than iMOACO to a statistically significant extent on a large number of benchmark problems having from 3 to 10 objective functions.}
 }
 
 
@@ -107,7 +118,10 @@ doi = {10.1145/3583133.3596356},
 booktitle = {Proceedings of the Companion Conference on Genetic and Evolutionary Computation}, 
 pages = {2358–2361}, 
 location = {Lisbon, Portugal}, 
-series = {GECCO '23 Companion} 
+series = {GECCO '23 Companion},
+file ={fenaux23gaggle.pdf},
+code = {https://github.com/LucasFenaux/torch-gaggle},
+abstract = {PyTorch has profoundly impacted the machine learning (ML) community by allowing researchers of all backgrounds to train models efficiently. While PyTorch is the de facto standard in ML, the evolutionary algorithms (EA) community instead relies on many different libraries, each with low adoption in practice. In an effort to provide a standardized library for EA, packages like LEAP and PyGAD have been developed. However, these libraries fall short in either scalability or usability. In particular, neither of these packages offers efficient support for neuroevolutionary tasks. We argue that the best way to develop a PyTorch-like library for EAs is to build on the already solid foundation of PyTorch itself. We present Gaggle, an efficient PyTorch-based EA library that better supports GPU-based tasks like neuroevolution while maintaining the efficiency of CPU-based problems. We evaluate Gaggle on various problems and find statistically significant improvements in runtime over prior work on problems like training neural networks. In addition to efficiency, Gaggle provides a simple single-line interface making it accessible to beginners and a more customizable research interface with detailed configuration files to better support the EA research community.}
 }
 
 @inproceedings {diaa24pillar,
@@ -116,9 +130,12 @@ title = {Fast and Private Inference of Deep Neural Networks by Co-designing Acti
 booktitle = {33rd USENIX Security Symposium (USENIX Security 24)},
 year = {2024},
 pages = {2191--2208},
-url = {https://www.usenix.org/conference/usenixsecurity24/presentation/diaa},
 publisher = {USENIX Association},
-month = aug
+month = aug,
+url = {https://www.usenix.org/conference/usenixsecurity24/presentation/diaa},
+file={diaa24pillar.pdf},
+code = {https://github.com/LucasFenaux/PILLAR-ESPN},
+abstract={Machine Learning as a Service (MLaaS) is an increasingly popular design where a company with abundant computing resources trains a deep neural network and offers query access for tasks like image classification. The challenge with this design is that MLaaS requires the client to reveal their potentially sensitive queries to the company hosting the model. Multi-party computation (MPC) protects the client's data by allowing encrypted inferences. However, current approaches suffer from prohibitively large inference times. The inference time bottleneck in MPC is the evaluation of non-linear layers such as ReLU activation functions. Motivated by the success of previous work co-designing machine learning and MPC, we develop an activation function co-design. We replace all ReLUs with a polynomial approximation and evaluate them with single-round MPC protocols, which give state-of-the-art inference times in wide-area networks. Furthermore, to address the accuracy issues previously encountered with polynomial activations, we propose a novel training algorithm that gives accuracy competitive with plaintext models. Our evaluation shows between $3$ and $110\times$ speedups in inference time on large models with up to $23$ million parameters while maintaining competitive inference accuracy.}
 }
 
 @inproceedings {mahdavi24pepsi,
@@ -127,9 +144,12 @@ title = {{PEPSI}: Practically Efficient Private Set Intersection in the Unbalanc
 booktitle = {33rd USENIX Security Symposium (USENIX Security 24)},
 year = {2024},
 pages = {6453--6470},
-url = {https://www.usenix.org/conference/usenixsecurity24/presentation/mahdavi},
 publisher = {USENIX Association},
-month = aug
+month = aug,
+url = {https://www.usenix.org/conference/usenixsecurity24/presentation/mahdavi},
+file={mahdavi24pepsi.pdf},
+code = {https://github.com/RasoulAM/pepsi},
+abstract={Two parties with private data sets can find shared elements using a Private Set Intersection (PSI) protocol without revealing any information beyond the intersection. Circuit PSI protocols privately compute an arbitrary function of the intersection - such as its cardinality, and are often employed in an \emph{unbalanced} setting where one party has more data than the other. Existing protocols are either computationally inefficient or require extensive server-client communication on the order of the larger set. We introduce Practically Efficient PSI or PEPSI, a non-interactive solution where only the client sends its encrypted data. PEPSI can process an intersection of 1024 client items with a million server items in under a second, using less than 5 MB of communication. Our work is over 4 orders of magnitude faster than an existing non-interactive circuit PSI protocol and requires only 10\% of the communication. It is also up to 20 times faster than the work of Ion et al., which computes a limited set of functions and has communication costs proportional to the larger set. Our work is the first to demonstrate that non-interactive circuit PSI can be practically applied in an unbalanced setting.}
 }
 
 
@@ -139,7 +159,11 @@ title={FastLloyd: Federated, Accurate, Secure, and Tunable $ k $-Means Clusterin
 booktitle = {34th USENIX Security Symposium (USENIX Security 25)},
 year = {2025},
 publisher = {USENIX Association},
-month = aug
+month = aug,
+url = {https://www.usenix.org/conference/usenixsecurity25/presentation/diaa},
+file = {diaa25fastlloyd.pdf},
+code = {https://doi.org/10.5281/zenodo.15530617},
+abstract={We study the problem of privacy-preserving $k$-means clustering in the horizontally federated setting. Existing federated approaches using secure computation suffer from substantial overheads and do not offer output privacy. At the same time, differentially private (DP) $k$-means algorithms either assume a trusted central curator or significantly degrade utility by adding noise in the local DP model. Naively combining the secure and central DP solutions results in a protocol with impractical overhead. Instead, our work provides enhancements to both the DP and secure computation components, resulting in a design that is faster, more private, and more accurate than previous work. By utilizing the computational DP model, we design a lightweight, secure aggregation-based approach that achieves five orders of magnitude speed-up over state-of-the-art related work. Furthermore, we not only maintain the utility of the state-of-the-art in the central model of DP, but we improve the utility further by designing a new DP clustering mechanism.}
 }
 
 

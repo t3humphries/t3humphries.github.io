@@ -51,6 +51,8 @@ pre{
 {% else %}
 <a href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank"><button class="btn btn-primary btm-sm">DOI</button></a>
 {% endif %}
+{% elsif entry.url %}
+<a href="{{ entry.url }}" target="_blank"><button class="btn btn-primary btm-sm">URL</button></a>
 {% endif %}
 
 {% if entry.type == 'unpublished' or entry.type == 'article' or  entry.type == 'thesis' or entry.type == 'inproceedings' or entry.type == 'report' %}
@@ -63,36 +65,74 @@ pre{
 
 {% if entry.abstract %}
 {% assign clean_bib = entry.bibtex | remove: entry.abstract | remove: entry.code | remove: entry.file %}
+{% comment %} Remove empty field patterns {% endcomment %}
 {% assign clean_bib = clean_bib | replace: "code = {}", "" %}
-{% assign clean_bib = clean_bib | replace: "code = {},", "" %}
 {% assign clean_bib = clean_bib | replace: "file = {}", "" %}
+{% assign clean_bib = clean_bib | replace: "abstract = {}", "" %}
+{% assign clean_bib = clean_bib | replace: "code = {},", "" %}
 {% assign clean_bib = clean_bib | replace: "file = {},", "" %}
-{% assign clean_bib = clean_bib | replace: "
+{% assign clean_bib = clean_bib | replace: "abstract = {},", "" %}
+{% assign clean_bib = clean_bib | replace: "file={},", "" %}
+{% comment %} Fix the specific trailing comma issue {% endcomment %}
+{% assign clean_bib = clean_bib | replace: "},
+  ,", "}," %}
+{% assign clean_bib = clean_bib | replace: "},
+,", "}," %}
+{% assign clean_bib = clean_bib | replace: ",
+  ,", "," %}
+{% assign clean_bib = clean_bib | replace: ",
+,", "," %}
+{% assign clean_bib = clean_bib | replace: ",
+  
+}", "
+}" %}
+{% assign clean_bib = clean_bib | replace: ",
 
 }", "
-}" | replace: "
-}", "}" | strip %}
+}" %}
+{% assign clean_bib = clean_bib | replace: ",
+}", "
+}" %}
+{% assign clean_bib = clean_bib | strip %}
 <div id="a{{entry.key}}" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>{{ clean_bib }}</pre>
+<pre style="padding: 15px; margin: 0;">{{ clean_bib }}</pre>
 </div>
 {% else %}
 {% assign clean_bib = entry.bibtex | remove: entry.code | remove: entry.file %}
+{% comment %} Remove empty field patterns {% endcomment %}
 {% assign clean_bib = clean_bib | replace: "code = {}", "" %}
-{% assign clean_bib = clean_bib | replace: "code = {},", "" %}
 {% assign clean_bib = clean_bib | replace: "file = {}", "" %}
+{% assign clean_bib = clean_bib | replace: "code = {},", "" %}
 {% assign clean_bib = clean_bib | replace: "file = {},", "" %}
-{% assign clean_bib = clean_bib | replace: "
+{% assign clean_bib = clean_bib | replace: "file={},", "" %}
+{% comment %} Fix the specific trailing comma issue {% endcomment %}
+{% assign clean_bib = clean_bib | replace: "},
+  ,", "}," %}
+{% assign clean_bib = clean_bib | replace: "},
+,", "}," %}
+{% assign clean_bib = clean_bib | replace: ",
+  ,", "," %}
+{% assign clean_bib = clean_bib | replace: ",
+,", "," %}
+{% assign clean_bib = clean_bib | replace: ",
+  
+}", "
+}" %}
+{% assign clean_bib = clean_bib | replace: ",
 
 }", "
-}" | replace: "
-}", "}" | strip %}
+}" %}
+{% assign clean_bib = clean_bib | replace: ",
+}", "
+}" %}
+{% assign clean_bib = clean_bib | strip %}
 <div id="a{{entry.key}}" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>{{ clean_bib }}</pre>
+<pre style="padding: 15px; margin: 0;">{{ clean_bib }}</pre>
 </div>
 {% endif %}
 
 <div id="b{{entry.key}}" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>{{entry.abstract}}</pre>
+<pre style="padding: 15px; margin: 0;">{{entry.abstract}}</pre>
 </div>
 
 <script>
