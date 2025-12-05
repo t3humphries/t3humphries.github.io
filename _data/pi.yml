@@ -5,7 +5,7 @@
   github: https://github.com/t3humphries
   researchgate: https://www.researchgate.net/profile/Thomas-Humphries-2
   scholar: https://scholar.google.ca/citations?user=e0CLtssAAAAJ&hl=en
-  cv: cv/cv.pdf
+  cv: assets/cv.pdf
   # Change the number below to the number of "educations" you have (up to 6)
   number_educ: 1
   education1: "(2021) MMath, University of Waterloo"
