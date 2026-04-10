@@ -158,3 +158,14 @@ code = {https://doi.org/10.5281/zenodo.15530617},
 abstract={We study the problem of privacy-preserving $k$-means clustering in the horizontally federated setting. Existing federated approaches using secure computation suffer from substantial overheads and do not offer output privacy. At the same time, differentially private (DP) $k$-means algorithms either assume a trusted central curator or significantly degrade utility by adding noise in the local DP model. Naively combining the secure and central DP solutions results in a protocol with impractical overhead. Instead, our work provides enhancements to both the DP and secure computation components, resulting in a design that is faster, more private, and more accurate than previous work. By utilizing the computational DP model, we design a lightweight, secure aggregation-based approach that achieves five orders of magnitude speed-up over state-of-the-art related work. Furthermore, we not only maintain the utility of the state-of-the-art in the central model of DP, but we improve the utility further by designing a new DP clustering mechanism.}
 }
 
+@misc{humphries26RI,
+  author = {Thomas Humphries and Tim Li and Shufan Zhang and Karl Knopf and Xi He},
+  howpublished = {TPDP Workshop 2026},
+  title = {Interpreting the Error of Differentially Private Median Queries through Randomization Intervals},
+  year = {2026},
+  url ={https://arxiv.org/abs/2604.07581},
+  file = {humphries26RI.pdf},
+  code = {https://github.com/Timliuw/Randomization-Intervals},
+  abstract = {It can be difficult for practitioners to interpret the quality of differentially private (DP) statistics due to the added noise. One method to help analysts understand the amount of error introduced by DP is to return a Randomization Interval (RI), along with the statistic. A RI is a type of confidence interval that bounds the error introduced by DP. For queries where the noise distribution depends on the input, such as the median, prior work degrades the quality of the median itself to obtain a high-quality RI. In this work, we propose PostRI, a solution to compute a RI after the median has been estimated. PostRI enables a median estimation with 14%-850% higher utility than related work, while maintaining a narrow RI.},
+
+}

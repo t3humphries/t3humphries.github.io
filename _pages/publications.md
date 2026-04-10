@@ -29,6 +29,11 @@ years: [2016, 2017, 2018, 2019, 2020, 2021]
 </div>
 
 <div class="jumbotron">
+### Extended abstracts
+{% bibliography --query @misc %}
+</div>
+
+<div class="jumbotron">
 ### Refereed journal articles
 {% bibliography --query @article %}
 </div>
