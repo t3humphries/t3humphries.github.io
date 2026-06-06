@@ -11,6 +11,12 @@
     padding-right:15px;
     height:20px:
 }
+.publication-entry p {
+    margin: 0 0 0.25em 0;
+}
+.publication-entry .publication-buttons {
+    margin-top: 0;
+}
 pre{
     white-space: pre-wrap;  
     white-space: -moz-pre-wrap; 
@@ -22,10 +28,48 @@ pre{
 </style>
 
 
-<div class="text-justify">{{reference}}</div>
+<div class="text-justify publication-entry">
+  <p>
+    {% assign clean_title = entry.title | remove: "{" | remove: "}" %}
+    <strong>{{ clean_title }}</strong>
+    {% if entry.year %} ({{ entry.year }}){% endif %}
+    {% if entry.author %}
+      •
+      {% assign author_list = entry.author | split: " and " %}
+      {% assign author_names = "" %}
+      {% for author in author_list %}
+        {% assign parts = author | split: ", " %}
+        {% if parts.size > 1 %}
+          {% assign formatted_author = parts[1] | append: " " | append: parts[0] %}
+        {% else %}
+          {% assign formatted_author = author %}
+        {% endif %}
+        {% if forloop.first %}
+          {% assign author_names = formatted_author %}
+        {% else %}
+          {% assign author_names = author_names | append: ", " | append: formatted_author %}
+        {% endif %}
+      {% endfor %}
+      {{ author_names }}
+    {% endif %}
+    {% assign venue = "" %}
+    {% if entry.booktitle %}
+      {% assign venue = entry.booktitle %}
+    {% elsif entry.journal %}
+      {% assign venue = entry.journal %}
+    {% elsif entry.school %}
+      {% assign venue = entry.school %}
+    {% elsif entry.publisher %}
+      {% assign venue = entry.publisher %}
+    {% endif %}
+    {% if venue %}
+      {% assign clean_venue = venue | remove: "{" | remove: "}" %}
+      • {{ clean_venue }}
+    {% endif %}
+  </p>
+</div>
 
-<!-- You can use the below to make your name bold -->
-<!-- {{reference | replace_first: 'Bryngelson, S. H.', '<b>Bryngelson, S. H.</b>' | replace_first: 'Bryngelson, S.', '<b>Bryngelson, S.</b>' }}</div> -->
+{% comment %} Default reference string intentionally hidden to use the custom layout above. {% endcomment %}
 
 {% assign bibtest = false %}
 {% if entry.file %}
@@ -37,15 +81,16 @@ pre{
 {% endfor %}
 {% endif %}
 
-{% if bibtest %}
-<a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank"><button class="btn btn-success btm-sm">PDF</button></a>
-{% endif %}
+<div class="publication-buttons">
+  {% if bibtest %}
+  <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank"><button class="btn btn-success btm-sm">PDF</button></a>
+  {% endif %}
 
-{% if entry.code %}
-<a href="{{ entry.code }}" target="_blank"><button class="btn btn-info btm-sm">CODE</button></a>
-{% endif %}
+  {% if entry.code %}
+  <a href="{{ entry.code }}" target="_blank"><button class="btn btn-info btm-sm">CODE</button></a>
+  {% endif %}
 
-{% if entry.doi %}
+  {% if entry.doi %}
 {% if entry.type == 'unpublished' %}
 <a href="{{ entry.doi | prepend: 'https://arxiv.org/abs/' }}" target="_blank"><button class="btn btn-primary btm-sm">ARXIV</button></a>
 {% else %}
@@ -60,8 +105,9 @@ pre{
 {% endif %}
 
 {% if entry.abstract %}
-<button class="btn btn-warning btm-sm"  onclick="toggleAbstract{{entry.key}}()">ABSTRACT</button>
+  <button class="btn btn-warning btm-sm"  onclick="toggleAbstract{{entry.key}}()">ABSTRACT</button>
 {% endif %}
+</div>
 
 {% if entry.abstract %}
 {% assign clean_bib = entry.bibtex | remove: entry.abstract | remove: entry.code | remove: entry.file %}

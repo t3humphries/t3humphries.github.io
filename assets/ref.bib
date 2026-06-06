@@ -169,3 +169,14 @@ abstract={We study the problem of privacy-preserving $k$-means clustering in the
   abstract = {It can be difficult for practitioners to interpret the quality of differentially private (DP) statistics due to the added noise. One method to help analysts understand the amount of error introduced by DP is to return a Randomization Interval (RI), along with the statistic. A RI is a type of confidence interval that bounds the error introduced by DP. For queries where the noise distribution depends on the input, such as the median, prior work degrades the quality of the median itself to obtain a high-quality RI. In this work, we propose PostRI, a solution to compute a RI after the median has been estimated. PostRI enables a median estimation with 14%-850% higher utility than related work, while maintaining a narrow RI.},
 
 }
+
+@unpublished{humphries26PEmeans,
+    title = {PE-means: Improved Differentially Private k-means Clustering through Private Evolution},
+    author = {Thomas Humphries and Zinan Lin and Sergey Yekhanin},
+    year = {2026},
+    DOI={2606.00342},
+    url ={https://arxiv.org/abs/2606.00342},
+  file = {humphries26pemeans.pdf},
+  abstract={We study the problem of differentially private (DP) k-means clustering in Euclidean space. Previous solutions rely on summing the private data directly, which induces a sensitivity proportional to the domain. We introduce PE-means, an extension of the private evolution (PE) algorithm (an increasingly popular method for synthetic data generation), to the problem of k-means clustering. The key advantage of PE is that it only computes a private histogram with constant sensitivity to guide the evolution. Our adaptation of PE includes new evolutionary operators for clustering, as well as other algorithmic improvements of independent interest. Overall, PE-means achieves an average improvement of 20% in clustering loss over state-of-the-art baselines.}
+    
+}
