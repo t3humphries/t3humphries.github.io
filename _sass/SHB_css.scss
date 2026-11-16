@@ -21,22 +21,23 @@ img {
 
   .social-links {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 0.15em;
+    gap: 0;
   }
 
   .social-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
   }
 
   .social-links .bluesky-icon {
     display: block;
-    width: 3em;
-    height: 3em;
+    width: 2.5em;
+    height: 2.5em;
   }
   
   .container-fluid {
