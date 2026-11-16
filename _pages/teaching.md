@@ -33,7 +33,7 @@ permalink: /teaching/
 ## Professional Development - University of Waterloo
 
 
-- **[Certificate of University Teaching Program](https://uwaterloo.ca/centre-for-teaching-excellence/support-graduate-students/certificate-university-teaching)** \| *In Progress*
+- **[Certificate of University Teaching Program](https://uwaterloo.ca/centre-for-teaching-excellence/support-graduate-students/certificate-university-teaching)** \| *June 2026*
 
 
 - **[Fundamentals of University Teaching Program](https://uwaterloo.ca/centre-for-teaching-excellence/support-graduate-students/fundamentals-university-teaching-program)** \| *December 2023*
