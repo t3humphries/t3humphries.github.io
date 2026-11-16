@@ -18,6 +18,26 @@ img {
     margin-top: 5px;
     margin-bottom: 5px;
   }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.15em;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-links .bluesky-icon {
+    display: block;
+    width: 3em;
+    height: 3em;
+  }
   
   .container-fluid {
     max-width: 100%; /* Make the container fluid */
